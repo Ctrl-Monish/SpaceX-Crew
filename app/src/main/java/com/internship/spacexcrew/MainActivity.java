@@ -69,13 +69,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void refresh(){
+        try{
         for(CrewMember member : members){
-            try {
                 saveCrewMember(member);
-            }catch (Exception e){
-                e.printStackTrace();
-            }
-
+        }
+        }catch (Exception e){
+            e.printStackTrace();
         }
     }
 
