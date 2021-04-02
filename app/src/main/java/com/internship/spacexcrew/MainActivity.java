@@ -1,6 +1,7 @@
 package com.internship.spacexcrew;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -84,6 +85,10 @@ public class MainActivity extends AppCompatActivity {
         memberAdapter = new CrewMemberAdapter((ArrayList<CrewMember>) members);
         recyclerView = findViewById(R.id.rvUsers);
         recyclerView.setLayoutManager(new LinearLayoutManager(getBaseContext()));
+
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(),
+                1);
+        recyclerView.addItemDecoration(dividerItemDecoration);
         recyclerView.setAdapter(memberAdapter);
     }
 
